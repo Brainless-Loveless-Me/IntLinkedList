@@ -105,4 +105,27 @@ internal class IntLinkedList
     {
         return this.len;
     }
+
+    public int? LookAtFirst( )
+    {
+        // If list is empty
+        if (this.head == null)
+        {
+            return null;
+        }
+        return this.head.Value;
+    }
+
+    public int? RemoveFirst( )
+    {
+        if (this.head == null)
+        {
+            return null;
+        }
+        int headValue = this.head.Value;
+        // Remove head
+        this.head = this.head.Next;
+        return headValue;
+    }
+
 }

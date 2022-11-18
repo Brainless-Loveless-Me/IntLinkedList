@@ -1,8 +1,25 @@
-class Stack
+class IntStack
 {
+    // Field
     private IntLinkedList il;
-    public void Push()
+
+    public IntStack( )
+    { 
+        il = new IntLinkedList( );
+    }
+
+    public void Push(int value)
     {
-        il = new IntLinkedList();
+        il.Prepend(value);
+    }
+
+    public int? Peek( )
+    {
+        return il.LookAtFirst( );
+    }
+
+    public int? Pop( )
+    {
+        return il.RemoveFirst( );
     }
 }
