@@ -22,4 +22,15 @@ class IntStack
     {
         return il.RemoveFirst( );
     }
+    public string isEmpty()
+    {
+        if (il.IsEmpty() == true)
+        {
+            return "Empty";
+        }
+        else
+        {
+            return "Is not empty";
+        }
+    }
 }

@@ -127,5 +127,16 @@ internal class IntLinkedList
         this.head = this.head.Next;
         return headValue;
     }
+    public bool IsEmpty()
+    {
+        if(this.head == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 }
