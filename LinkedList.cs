@@ -85,7 +85,7 @@ internal class LinkedList<T>
         }
         listRepr += curr.Value;
         // listRepr += "NULL";
-        return listRepr;
+        return "(" + listRepr + ")";
 
     }
 

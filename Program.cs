@@ -32,3 +32,28 @@
 
 // // Console.WriteLine(target);
 // // Console.WriteLine(null);
+
+
+/*
+authour paul lopez
+date 11/11/24
+an implement of an generic linked list
+*/
+
+LinkedList<int> il = new LinkedList<int>();
+for (int i = 0; i < 10; i++)
+{
+    il.Prepend(i * 3 - 9);
+}
+Console.WriteLine(il);
+Console.WriteLine(il.LookFor(0));
+Console.WriteLine(il.RemoveFirst());
+Console.WriteLine(il.LookAtFirst());
+
+LinkedList<int> il2= new LinkedList<int>();
+il2.Append(1);
+il2.Append(2);
+il2.Append(3);
+
+LinkedList<LinkedList<int>> superlinkedlist = new LinkedList<LinkedList<int>>();
+Console.WriteLine(superlinkedlist);
