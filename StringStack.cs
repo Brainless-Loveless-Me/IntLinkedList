@@ -1,24 +1,24 @@
-class IntStack
+class StringStack
 {
     // Field
-    private IntLinkedList il;
+    private StringLinkedList il;
 
-    public IntStack( )
+    public StringStack( )
     { 
-        il = new IntLinkedList( );
+        il = new StringLinkedList( );
     }
 
-    public void Push(int value)
+    public void Push(string value)
     {
         il.Prepend(value);
     }
 
-    public int? Peek( )
+    public string? Peek( )
     {
         return il.LookAtFirst( );
     }
 
-    public int? Pop( )
+    public string? Pop( )
     {
         return il.RemoveFirst( );
     }

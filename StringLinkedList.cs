@@ -104,4 +104,36 @@ internal class StringLinkedList
     {
         return this.len;
     }
+    public string? LookAtFirst( )
+    {
+        // If list is empty
+        if (this.head == null)
+        {
+            return null;
+        }
+        return this.head.Value;
+    }
+
+    public string? RemoveFirst( )
+    {
+        if (this.head == null)
+        {
+            return null;
+        }
+        string headValue = this.head.Value;
+        // Remove head
+        this.head = this.head.Next;
+        return headValue;
+    }
+    public bool IsEmpty()
+    {
+        if(this.head == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
