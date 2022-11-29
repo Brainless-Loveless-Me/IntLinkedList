@@ -104,6 +104,7 @@ internal class StringLinkedList
     {
         return this.len;
     }
+    
     public string? LookAtFirst( )
     {
         // If list is empty
@@ -127,13 +128,14 @@ internal class StringLinkedList
     }
     public bool IsEmpty()
     {
-        if(this.head == null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        // if(this.head == null)
+        // {
+        //     return true;
+        // }
+        // else
+        // {
+        //     return false;
+        // }
+        return this.head == null;
     }
 }

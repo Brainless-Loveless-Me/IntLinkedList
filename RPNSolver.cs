@@ -1,7 +1,6 @@
 /*
 authour paul
-date 11/22/22
-RPN solver
+date11/22/22
 */
 
 class RPNSolver
@@ -32,6 +31,7 @@ class RPNSolver
                     stack.Push((int)sum);
                 }
                 else if (ep == "-")
+
                 {
                     int? diff = num1 - num2;
                     // if (sum == null) sum = 0;

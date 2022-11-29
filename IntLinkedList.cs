@@ -129,14 +129,15 @@ internal class IntLinkedList
     }
     public bool IsEmpty()
     {
-        if(this.head == null)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        // if(this.head == null)
+        // {
+        //     return true;
+        // }
+        // else
+        // {
+        //     return false;
+        // }
+        return this.head == null;
     }
 
 }

@@ -1,9 +1,9 @@
 class BalanceParens
 {
-    public static char[][] Tokens = new char[][] { new char[] { '{', '}' }, new char[] { '[', ']' }, new char[] { '(', ')' } };
-    public static bool isOpenTerm(char c)
+    public static char?[][] Tokens = new char?[][] { new char?[] { '{', '}' }, new char?[] { '[', ']' }, new char?[] { '(', ')' } };
+    public static bool isOpenTerm(char? c)
     {
-        foreach(char[] array in Tokens)
+        foreach(char?[] array in Tokens)
         {
             if (array[0] == c)
             {
@@ -12,9 +12,9 @@ class BalanceParens
         }
         return false;
     }
-    public static bool matches(char openTerm, char closeTerm)
+    public static bool matches(char? openTerm, char? closeTerm)
     {
-        foreach(char[] array in Tokens)
+        foreach(char?[] array in Tokens)
         {
             if (array[0] == openTerm)
             {
@@ -26,15 +26,15 @@ class BalanceParens
     public static bool isBalanced(string expression)
     {
         IntStack stack = new IntStack();
-        foreach(char c in expression.ToCharArray())
+        foreach(char? c in expression.ToCharArray())
         {
             if (isOpenTerm(c))
             {
-                stack.Push(c);
+                stack.Push(Convert.ToInt32(c));
             }
             else
             {
-                if(stack.isEmpty() || !matches((char)(stack.Pop()), c))
+                if(stack.isEmpty() || !matches((char?)(stack.Pop()), c))
                 {
                     return false;
                 }

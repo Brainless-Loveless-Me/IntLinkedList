@@ -96,6 +96,7 @@ internal class LinkedList<T>
         if(this.head == null)
         {
             this.head = node;
+            return;
         }
         Node Head = this.head;
         this.head = node;
