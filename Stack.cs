@@ -37,4 +37,9 @@ class Stack<T>
         }
         return first;
     }
+
+    public bool isEmpty()
+    {
+        return list.IsEmpty();
+    }
 }
