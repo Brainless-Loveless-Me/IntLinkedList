@@ -23,6 +23,7 @@ internal class LinkedList<T>
     //feild
     private int len;
     private Node? head;
+    private Node? rear;
     public Node? Head
     {
         get{return this.head; }
@@ -35,21 +36,24 @@ internal class LinkedList<T>
         Node node = new Node(value);
         this.len += 1;
         //ez case: the head is null (the list is empty!)
-        if(this.head == null)
+        if(this.rear == null)
         {
             this.head = node;
+            this.rear = node;
             return;
         }
-        //find the end of the list
-        Node curr = head;
-        while (curr.Next != null)//while node has someone behind
-        {
-            //go to next node
-            curr = curr.Next;
-        }
-        //the curr we are lookuing at does not have someone behind rthem
-        //put node behind curr
-        curr.Next = node;
+        // //find the end of the list
+        // Node curr = head;
+        // while (curr.Next != null)//while node has someone behind
+        // {
+        //     //go to next node
+        //     curr = curr.Next;
+        // }
+        // //the curr we are lookuing at does not have someone behind rthem
+        // //put node behind curr
+        // curr.Next = node;
+        this.rear.Next = node;
+        this.rear = this.rear.Next;
     }
     
     public T? LookFor(T e)
@@ -93,12 +97,13 @@ internal class LinkedList<T>
     {
         Node node = new Node(e);
         this.len += 1;
-        if(this.head == null)
+        if(this.rear == null)
         {
             this.head = node;
+            this.rear = node;
             return;
         }
-        Node Head = this.head;
+        Node? Head = this.head;
         this.head = node;
         this.head.Next = Head;
     }
@@ -127,6 +132,11 @@ internal class LinkedList<T>
         T headValue = this.head.Value;
         // Remove head
         this.head = this.head.Next;
+        if(this.head == null)
+        {
+            this.rear = null;
+        }
+
         return headValue;
     }
     public bool IsEmpty()
@@ -141,5 +151,4 @@ internal class LinkedList<T>
         // }
         return this.head == null;
     }
-
 }
